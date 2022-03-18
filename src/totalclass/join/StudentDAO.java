@@ -18,8 +18,8 @@ public class StudentDAO {
 	private JDBCUtil jdbc = JDBCUtil.getInstance();
 	
 	public int insertUser(Map<Object, Object> map) {
-		String sql = " insert into STUDENT (STU_ID,STU_PW,STU_NAME,STU_BIR,STU_TEL,STU_ADD,STU_GPA)"
-				+ "values (?,?,?,?,?,?,?)";
+		String sql = " insert into STUDENT (STU_ID,STU_PW,STU_NAME,STU_BIR,STU_TEL,STU_ADD,STU_GPA,AUTH)"
+				+ "values (?,?,?,?,?,?,?,?)";
 		
 		List<Object> p = new ArrayList<>();
 		p.add(map.get("STU_ID"));
@@ -29,6 +29,7 @@ public class StudentDAO {
 		p.add(map.get("STU_TEL"));
 		p.add(map.get("STU_ADD"));
 		p.add(map.get("STU_GRADE"));
+		p.add(map.get("AUTH"));
 		return jdbc.update(sql,p);
 	}
 	

@@ -2,6 +2,7 @@ package totalclass.service;
 
 import java.util.Map;
 
+//import service.MyMenu;
 import totalclass.controller.Controller;
 import totalclass.util.ScanUtil;
 import totalclass.util.View;
@@ -21,15 +22,16 @@ public class MainService {
 		new MainService().service();
 	}
 	
-	
-	
-	
+
+	private MyMenu mymenu = MyMenu.getInstance();
+
 	public int service() {
 		int view = View.MAIN;
 		
 		while(true){
 			switch(view){
 			case View.MAIN: view = serviceList(); break;
+			case View.MYMENU: view = mymenu.myMenu(); break;
 			case View.HOME: view = new Controller().start(); break;
 			}
 		}

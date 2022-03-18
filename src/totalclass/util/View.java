@@ -11,6 +11,6 @@ public class View {
 	public static final int MYMENU = 4;
 	public static final int SIGNUP = 5;	//수강신청게시판
 	public static final int QNASTUDENT = 6;	//Q&A 학생회원
-	public static final int GUIDE = 7;
+	public static final int GUIDE = 7; //공지사항
 	public static final int NOTICE = 10;
 }

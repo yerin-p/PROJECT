@@ -24,7 +24,7 @@ public class JoinService {
 	public int join() {
 		System.out.println("====================회원가입===================");
 		System.out.println("회원가입을 환영합니다");
-		System.out.println("1.학생회원가입\t 2.강사회원가입");
+		System.out.println("1.학생회원가입");
 		System.out.println("번호를 입력해주세요>");
 		int input =ScanUtil.nextInt();
 		
@@ -65,6 +65,8 @@ public class JoinService {
 		map.put("STU_TEL", stuTel);
 		map.put("STU_ADD", stuAdd);
 		map.put("STU_GRADE", stuGrade);
+		map.put("AUTH", 1);
+		
 		
 		int result = studentDao.insertUser(map);
 		

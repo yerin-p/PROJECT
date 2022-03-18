@@ -8,9 +8,7 @@ public class TotalClassApplication {
 	
 	public static void main(String[] args) {
 		// VO객체, DAO, Service, controller, View: MVC 패턴
-		public static StudentVO getSession() {
-	        return session;
-	    }
+		
 	}
 
 }
