@@ -2,7 +2,7 @@ package totalclass.service;
 
 import java.util.Map;
 
-//import service.MyMenu;
+
 import totalclass.controller.Controller;
 import totalclass.util.ScanUtil;
 import totalclass.util.View;
@@ -25,7 +25,7 @@ public class MainService {
 
 	private MyMenu mymenu = MyMenu.getInstance();
 //	private StudentQna stuQna = StudentQna.getInstance();
-	private Notice notice = Notice.getInstance();
+//	private Notice notice = Notice.getInstance();
 
 	public int service() {
 		int view = View.MAIN;
@@ -35,7 +35,7 @@ public class MainService {
 			case View.MAIN: view = serviceList(); break;
 			case View.MYMENU: view = mymenu.myMenu(); break;
 //			case View.QNASTUDENT: view = stuQna.qnaStu(); break;
-			case View.NOTICE: view = notice.Notice(); break;
+//			case View.NOTICE: view = notice.Notice(); break;
 			case View.HOME: view = new Controller().start(); break;
 			}
 		}

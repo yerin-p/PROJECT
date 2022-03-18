@@ -17,7 +17,6 @@ public class StudentData {
 		return instance;
 }
 	private StudentMenuDao studentMenuDao = StudentMenuDao.getInstance();
-	//private Careerdata cd = Careerdata.getInstance();
 	
 	public int Modify() {
 		System.out.println("==========================================");
@@ -35,7 +34,8 @@ public class StudentData {
 		case 3:
 			return View.MYMENU;
 		case 0:
-			break;
+			System.out.println("로그아웃합니다.");
+			return View.HOME;
 		default:
 			System.out.println("다시 입력해주세요");
 			break;

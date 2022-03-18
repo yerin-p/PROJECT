@@ -44,5 +44,14 @@ public class StudentDAO {
 	}
 	
 	
+	
+	public Map<String, Object> selectMan(String lecId, String password) {
+		String sql = "select * from LECTURER where lec_id = ? and lec_pw = ?"; 
+		List<Object> map = new ArrayList<>();
+		map.add(lecId);
+		map.add(password);
+		
+		return jdbc.selectOne(sql,map);
+	}
 
 }

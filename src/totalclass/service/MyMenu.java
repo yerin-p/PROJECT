@@ -28,14 +28,14 @@ public class MyMenu {
 		
 		}
 	
-	return View.MYMENU;
+	return View.MAIN;
 	}
-
+	
 	
 
 	public void albaMenu() {//마이메뉴
 		System.out.println("=====================My menu======================");
-		System.out.println("1.내 정보 보기\t 2.개인정보 수정/탈퇴 \t 3. 메인으로 돌아가기");
+		System.out.println("1.내 정보 보기\t 2.개인정보 수정/탈퇴 \t 3. 메인메뉴로 돌아가기");
 		int input = ScanUtil.nextInt();
 		switch (input) {
 		case 1:
@@ -46,8 +46,9 @@ public class MyMenu {
 			break;
 		case 3:
 			break;
+			
 		default:
-			System.out.println("다시 입력해주세요");
+			System.out.println("다시 입력해주세요.");
 			break;
 		}
 

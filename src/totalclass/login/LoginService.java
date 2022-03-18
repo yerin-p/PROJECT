@@ -27,10 +27,11 @@ public class LoginService {
 		switch(input){
 		case 1: loginstudent(); 
 			return View.MAIN;
+		case 2: loginlecturer();
+		    return View.MAIN;
 		case 0: break;
 		default:
 			System.out.println("다시 입력해주세요");
-			login();
 			break;
 		}
 		return View.HOME;
@@ -52,6 +53,25 @@ public class LoginService {
 			System.out.println(MainService.login.get("STU_NAME")+"님(학생) 어서오세요");
 			return View.MAIN;
 			}		
+		return login();
+	}
+	
+	public int loginlecturer() {
+		System.out.print("아이디>");
+		String lecId = ScanUtil.nextLine();
+		System.out.print("비밀번호>");
+		String password = ScanUtil.nextLine();
+
+		Map<String, Object> user = studentDao.selectMan(lecId, password);
+
+		if (user == null) {
+			System.out.println("아이디 혹은 비밀번호를 잘못 입력하셨습니다.");
+		} else {
+			System.out.println("로그인 성공");
+			MainService.login = user;
+			System.out.println(MainService.login.get("LEC_NAME")+"님 어서오세요");
+			return View.MAIN;
+		}
 		return login();
 	}
 	
