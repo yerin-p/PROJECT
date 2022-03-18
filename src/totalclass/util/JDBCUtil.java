@@ -82,14 +82,14 @@ public class JDBCUtil {
 	}
 
 	
-	public Map<String, Object> selectOne(String sql, List<Object> param) {
+	public Map<String, Object> selectOne(String sql, List<Object> map) {
 		Map<String, Object> hashMap = null;
 		try {
 			con = DriverManager.getConnection(url, user, password);
 
 			ps = con.prepareStatement(sql);
-			for (int i = 0; i < param.size(); i++) {
-				ps.setObject(i + 1, param.get(i));
+			for (int i = 0; i < map.size(); i++) {
+				ps.setObject(i + 1, map.get(i));
 			}
 			
 			rs = ps.executeQuery();
@@ -143,15 +143,15 @@ public class JDBCUtil {
 	}
 
 	// DB연결 > 쿼리 실행 > ?값 입력 > rs에서 값 추출 > List<Map<String, Object>> 형태로 리턴
-	public List<Map<String, Object>> selectList(String sql, List<Object> param) {
+	public List<Map<String, Object>> selectList(String sql, List<Object> map) {
 		List<Map<String, Object>> list = new ArrayList<>();
 
 		try {
 			con = DriverManager.getConnection(url, user, password);
 
 			ps = con.prepareStatement(sql);
-			for (int i = 0; i < param.size(); i++) {
-				ps.setObject(i + 1, param.get(i));
+			for (int i = 0; i < map.size(); i++) {
+				ps.setObject(i + 1, map.get(i));
 			}
 
 			rs = ps.executeQuery();
@@ -196,15 +196,15 @@ public class JDBCUtil {
 	}
 	
 	
-	public int update(String sql, List<Object> param){
+	public int update(String sql, List<Object> map){
 		int result = 0;
 		
 		try {
 			con = DriverManager.getConnection(url,user,password);
 			
 			ps = con.prepareStatement(sql);
-			for (int i = 0; i < param.size(); i++) {
-				ps.setObject(i + 1, param.get(i));
+			for (int i = 0; i < map.size(); i++) {
+				ps.setObject(i + 1, map.get(i));
 			}
 			
 			result = ps.executeUpdate();

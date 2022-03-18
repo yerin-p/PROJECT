@@ -1,10 +1,6 @@
 package totalclass.service;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
-
 import totalclass.util.ScanUtil;
 import totalclass.util.View;
 
@@ -18,7 +14,6 @@ public class MyMenu {
 	}	
 	private StudentData studata = StudentData.getInstance();
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 	
 	public int myMenu() {//권한별 메뉴이동
 	try{
@@ -33,7 +28,7 @@ public class MyMenu {
 		
 		}
 	
-	return View.MAIN;
+	return View.MYMENU;
 	}
 
 	
@@ -66,13 +61,7 @@ public class MyMenu {
 		String[] keyname = {"ID","PASSWORD","이름","생일","연락처","주소","성적"};
 		String[] key = {"STU_ID","STU_PW","STU_NAME","STU_BIR","STU_TEL","STU_ADD","STU_GPA"};
 		System.out.println("====================개인정보===================");
-		for (int i = 0; i < 8; i++) {
-			System.out.println(keyname[i] + " : "
-					+ MainService.login.get(key[i]));
-		}
-		System.out.println(keyname[3] + " : "
-				+ sdf.format(MainService.login.get(key[3])));
-		for (int i = 8; i < keyname.length; i++) {
+		for (int i = 0; i < 7; i++) {
 			System.out.println(keyname[i] + " : "
 					+ MainService.login.get(key[i]));
 		}

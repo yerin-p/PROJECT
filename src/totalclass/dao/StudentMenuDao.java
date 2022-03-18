@@ -35,7 +35,7 @@ public class StudentMenuDao {
 	
 	
 	public int delete(){
-		String sql = " delete from alba where STU_ID=? ";
+		String sql = " delete from student where STU_ID=? ";
 		List<Object> map = new ArrayList<>();
 		map.add(MainService.login.get("STU_ID"));
 		

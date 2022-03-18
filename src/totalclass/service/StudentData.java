@@ -76,10 +76,10 @@ public class StudentData {
 	private void update() {
 		System.out.println("====================수정====================");
 		Map<String, Object> studata = new HashMap<>();
-		String[] keyname = {"ID","PASSWORD","이름","생일","성별","메일","연락처","주소","권한"};
+		String[] keyname = {"ID","PASSWORD","이름","생일","연락처","주소","성적","권한"};
 		String[] key = {"STU_ID","STU_PW","STU_NAME","STU_BIR","STU_TEL","STU_ADD","STU_GPA","AUTH"};
 				studata.put(key[0],MainService.login.get(key[0]));
-		for (int i = 1; i < keyname.length - 1; i++) {
+		for (int i = 1; i < 7 ; i++) {
 			System.out.println("1." + keyname[i] + "을 변경하시겠습니까?\t 2.다음");
 			int input = ScanUtil.nextInt();
 			switch (input) {
@@ -97,7 +97,8 @@ public class StudentData {
 				break;
 			}
 		}
-		studata.put(key[8], MainService.login.get(key[8]));
+		studata.put("AUTH", 1);
+		studata.put(key[7], MainService.login.get(key[7]));
 		int result = studentMenuDao.update(studata);
 		
 		
